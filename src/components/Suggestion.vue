@@ -1,28 +1,29 @@
 <template>
   <div>
-    <button type="button" @click="getSuggestionData">获取数据</button>
-    <div>{{data}}</div>
+    <div>{{suggestion}}</div>
   </div>
 </template>
 
 <script>
-
-import heweather from '../api/heweather'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'test',
+  name: 'suggetion',
   data () {
-    return {
-      data: ''
-    }
+    return {}
+  },
+  created () {
+    this.getSuggestion('广州')
+  },
+  computed: {
+    ...mapGetters([
+      'suggestion'
+    ])
   },
   methods: {
-    getSuggestionData: function () {
-      heweather.getSuggestionData(suggestionData => {
-        console.log(suggestionData)
-        this.data = suggestionData
-      }, '广州')
-    }
+    ...mapActions([
+      'getSuggestion'
+    ])
   }
 }
 </script>

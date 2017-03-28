@@ -13,7 +13,7 @@ const getters = {
 
 // actions
 const actions = {
-  getNow (commit, city) {
+  getNow ({commit, city}) {
     heweather.getNowData(
       (now) => {
         commit(

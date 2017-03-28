@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import Index from '@/components/Index'
 import Layout from '@/components/Layout'
 import Forecast from '@/components/Forecast' // 天气预报组件
 import Hourly from '@/components/Hourly' // 每小时天气预报组件
@@ -12,26 +14,32 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/index',
+      name: 'index',
+      component: Index
+    },
+    {
+      path: '/weather',
+      name: 'layout',
       component: Layout,
       children: [
         {
-          path: 'now',
+          path: '/weather/now',
           name: 'now',
           component: Now
         },
         {
-          path: 'forecast',
+          path: '/weather/forecast',
           name: 'Forecast',
           component: Forecast
         },
         {
-          path: 'hourly',
+          path: '/weather/hourly',
           name: 'Hourly',
           component: Hourly
         },
         {
-          path: 'suggestion',
+          path: '/weather/suggestion',
           name: 'Suggestion',
           component: Suggestion
         }

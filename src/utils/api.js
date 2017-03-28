@@ -1,5 +1,5 @@
 export function checkData (response) {
-  switch (response.status) {
+  switch (response.statusText.toLowerCase()) {
     case 'ok':
       return {isOk: true, msg: '数据正常'}
     case 'invalid key':

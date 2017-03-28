@@ -21,3 +21,7 @@ export const SEND_REQUEST = 'SEND_REQUEST'
 export const SUCCESS_RECEIVE_DATA = 'SUCCESS_RECEIVEDATA'
 // 接收数据失败
 export const FAIL_RECEIVE_DATA = 'FAIL_RECEIVE_DATA'
+
+/* 界面元素 */
+
+export const CHANGE_TITLE = 'CHANGE_TITLE'
