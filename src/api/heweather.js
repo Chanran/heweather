@@ -1,7 +1,21 @@
+import Vue from 'vue'
 import axios from 'axios'
+import { checkData } from '../utils/api'
 
 const host = 'https://free-api.heweather.com/v5'
 const key = '5dafd138ca9841938affbd41798d1cbb'
+
+/**
+ * 弹窗封装
+ * @param {any} title 弹窗标题
+ * @param {any} content 弹窗内容
+ */
+function alert (title, content) {
+  Vue.$vux.alert.show({
+    title,
+    content
+  })
+}
 
 /* 和风天气api */
 
@@ -18,11 +32,17 @@ function getAllData (callback, city) {
     }
   })
   .then((response) => {
-    let data = response.data
-    let allData = data.HeWeather5[0]
-    callback(allData)
+    let check = checkData(response)
+    if (check.isOk) {
+      let data = response.data
+      let allData = data.HeWeather5[0]
+      callback(allData)
+    } else {
+      alert('警告', check.msg)
+    }
   })
   .catch((error) => {
+    alert('警告', '客户端错误')
     console.log(error)
   })
 }
@@ -40,11 +60,17 @@ function getForecastData (callback, city) {
     }
   })
   .then((response) => {
-    let data = response.data
-    let forecast = data.HeWeather5[0].daily_forecast
-    callback(forecast)
+    let check = checkData(response)
+    if (check.isOk) {
+      let data = response.data
+      let forecast = data.HeWeather5[0].daily_forecast
+      callback(forecast)
+    } else {
+      alert('警告', check.msg)
+    }
   })
   .catch((error) => {
+    alert('警告', '客户端错误')
     console.log(error)
   })
 }
@@ -62,11 +88,17 @@ function getHourlyData (callback, city) {
     }
   })
   .then((response) => {
-    let data = response.data
-    let hourly = data.HeWeather5[0].hourly_forecast
-    callback(hourly)
+    let check = checkData(response)
+    if (check.isOk) {
+      let data = response.data
+      let hourly = data.HeWeather5[0].hourly_forecast
+      callback(hourly)
+    } else {
+      alert('警告', check.msg)
+    }
   })
   .catch((error) => {
+    alert('警告', '客户端错误')
     console.log(error)
   })
 }
@@ -84,11 +116,17 @@ function getNowData (callback, city) {
     }
   })
   .then((response) => {
-    let data = response.data
-    let now = data.HeWeather5[0].now
-    callback(now)
+    let check = checkData(response)
+    if (check.isOk) {
+      let data = response.data
+      let now = data.HeWeather5[0].now
+      callback(now)
+    } else {
+      alert('警告', check.msg)
+    }
   })
   .catch((error) => {
+    alert('警告', '客户端错误')
     console.log(error)
   })
 }
@@ -106,11 +144,17 @@ function getSuggestionData (callback, city) {
     }
   })
   .then((response) => {
-    let data = response.data
-    let suggestion = data.HeWeather5[0].suggestion
-    callback(suggestion)
+    let check = checkData(response)
+    if (check.isOk) {
+      let data = response.data
+      let suggestion = data.HeWeather5[0].suggestion
+      callback(suggestion)
+    } else {
+      alert('警告', check.msg)
+    }
   })
   .catch((error) => {
+    alert('警告', '客户端错误')
     console.log(error)
   })
 }

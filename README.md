@@ -28,8 +28,6 @@ npm run dev
 
 ## 使用和风天气接口
 
-- appKey: 5dafd138ca9841938affbd41798d1cbb
-
 - [api文档](http://www.heweather.com/documents/api/v5)
 
 ## Build Setup
