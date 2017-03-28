@@ -14,6 +14,7 @@ export const RECEIVE_SUGGESTION_DATA = 'RECEIVE_SUGGESTION_DATA'
 export const RECEIVE_CITY_DATA = 'RECEIVE_CITY_DATA'
 
 /* 请求 */
+
 // 发出请求
 export const SEND_REQUEST = 'SEND_REQUEST'
 // 成功接收数据

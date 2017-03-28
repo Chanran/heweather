@@ -2,7 +2,7 @@
   "name": "heweather",
   "version": "1.0.0",
   "description": " vuejs heweather project",
-  "author": "蓝灿荣 <wb-lcr263636@alibaba-inc.com>",
+  "author": "蓝灿荣 <rong650751@163.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
