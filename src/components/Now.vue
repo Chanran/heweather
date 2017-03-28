@@ -1,21 +1,29 @@
 <template>
   <div>
-    now
+    <div>{{now}}</div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'now',
-  components: {
-    Group,
-    Cell
-  },
   data () {
-    return {
-    }
+    return {}
+  },
+  created () {
+    this.getNow('广州')
+  },
+  computed: {
+    ...mapGetters([
+      'now'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getNow'
+    ])
   }
 }
 </script>

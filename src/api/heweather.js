@@ -32,7 +32,7 @@ function getAllData (callback, city) {
     }
   })
   .then((response) => {
-    let check = checkData(response.HeWeather5[0])
+    let check = checkData(response)
     if (check.isOk) {
       let data = response
       let allData = data.HeWeather5[0]
@@ -60,7 +60,7 @@ function getForecastData (callback, city) {
     }
   })
   .then((response) => {
-    let check = checkData(response.HeWeather5[0])
+    let check = checkData(response)
     if (check.isOk) {
       let data = response.data
       let forecast = data.HeWeather5[0].daily_forecast
@@ -88,7 +88,7 @@ function getHourlyData (callback, city) {
     }
   })
   .then((response) => {
-    let check = checkData(response.HeWeather5[0])
+    let check = checkData(response)
     if (check.isOk) {
       let data = response.data
       let hourly = data.HeWeather5[0].hourly_forecast
@@ -116,7 +116,7 @@ function getNowData (callback, city) {
     }
   })
   .then((response) => {
-    let check = checkData(response.HeWeather5[0])
+    let check = checkData(response)
     if (check.isOk) {
       let data = response.data
       let now = data.HeWeather5[0].now

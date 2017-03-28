@@ -31,7 +31,6 @@ const actions = {
 // mutations
 const mutations = {
   [types.RECEIVE_SUGGESTION_DATA] (state, action) {
-    console.log(action)
     state.suggestion = action.suggestion
   }
 }

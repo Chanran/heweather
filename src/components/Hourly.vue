@@ -1,21 +1,29 @@
 <template>
   <div>
-    hourly
+    <div>{{hourly}}</div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'hourly',
-  components: {
-    Group,
-    Cell
-  },
   data () {
-    return {
-    }
+    return {}
+  },
+  created () {
+    this.getHourly('广州')
+  },
+  computed: {
+    ...mapGetters([
+      'hourly'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getHourly'
+    ])
   }
 }
 </script>

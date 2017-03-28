@@ -1,32 +1,30 @@
 <template>
   <div>
-    forecast
+    <div>{{suggestion}}</div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
-  name: 'hello',
-  components: {
-    Group,
-    Cell
-  },
+  name: 'forecast',
   data () {
-    return {
-    }
+    return {}
+  },
+  computed: {
+    ...mapGetters([
+      'forecast'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getForecast'
+    ])
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.vux-demo {
-  text-align: center;
-}
-.logo {
-  width: 100px;
-  height: 100px
-}
 </style>
