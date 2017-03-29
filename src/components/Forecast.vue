@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>{{suggestion}}</div>
+    <div>{{forecast}}</div>
   </div>
 </template>
 
@@ -11,6 +11,9 @@ export default {
   name: 'forecast',
   data () {
     return {}
+  },
+  created () {
+    this.getForecast('广州')
   },
   computed: {
     ...mapGetters([
