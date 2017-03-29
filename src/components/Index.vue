@@ -1,32 +1,24 @@
 <template>
-  <div>
-    Index
+  <div class="root">
+    <div class="search-form">
+
+    </div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
-
-export default {
-  name: 'hourly',
-  components: {
-    Group,
-    Cell
-  },
-  data () {
-    return {
-    }
-  }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.vux-demo {
-  text-align: center;
+<style lang="less" scoped>
+.root {
+  width: 100%;
+  height: 100%;
+  background: url('../assets/bg.jpg') no-repeat;
+  background-size: 100% 100%;
 }
-.logo {
-  width: 100px;
-  height: 100px
+
+.search-form {
+
 }
 </style>
