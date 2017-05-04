@@ -7,12 +7,17 @@ import Forecast from '@/components/Forecast' // 天气预报组件
 import Hourly from '@/components/Hourly' // 每小时天气预报组件
 import Now from '@/components/Now' // 实时天气组件
 import Suggestion from '@/components/Suggestion' // 生活指数组件
+import NotFound from '@/components/NotFound' // 404NotFound组件
 
 // 使用router
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      redirect: '/index'
+    },
     {
       path: '/index',
       name: 'index',
@@ -44,6 +49,11 @@ export default new Router({
           component: Suggestion
         }
       ]
+    },
+    {
+      path: '*',
+      name: 'notFound',
+      component: NotFound
     }
   ]
 })
