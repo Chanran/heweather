@@ -1,6 +1,6 @@
 <template>
   <div class="root">
-    test
+    404 not found
   </div>
 </template>
 
