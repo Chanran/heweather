@@ -10,7 +10,6 @@ npm run dev
 ```
 
 ## 技术栈
-
 **vue2.x + vue-router2.x + axios + vuex2.x + vux2.x**
 
 - [vue文档(基础知识)](https://cn.vuejs.org/v2/guide/index.html)
